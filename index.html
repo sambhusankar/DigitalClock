@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock by Sankar</title>
+  <style>
+    body{
+      background:#324254;
+      text-align:center;
+      display: flex;
+      justify-content:center;
+    }
+    div{
+      height:24vw;
+      width:24vw;
+      background:#079ded;
+      margin: 0.5rem;
+      margin-top:10rem;
+      line-height:24vw;
+      font-size:12vw;
+      color:white;
+       -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+       
+    }
+    p{
+      font-weight:bold;
+      font-size:7vw;
+      margin-top:10rem;
+      color:
+    }
+  </style>
+</head>
+<body>
+  <div id="hour"></div>
+  <div id="minute"></div>
+  <div id="second"></div>
+  <p id="meridiem"></p>
+<script>
+function showtime(){
+    let a = new Date();
+    let h=a.getHours();
+    let m=a.getMinutes();
+    let s=a.getSeconds();
+     
+document.getElementById("hour").innerHTML=`${h}`;
+document.getElementById("minute").innerHTML=`${m}`;
+document.querySelector("#second").textContent=`${s}`;
+ let me=document.getElementById("meridiem");
+if(document.getElementById("hour").innerHTML>=12){
+  me.innerHTML="PM";
+  }
+else{
+  me.innerHTML="AM";
+}
+}
+setInterval(showtime,1000);
+
+
+</script>
+</body>
+</html>
